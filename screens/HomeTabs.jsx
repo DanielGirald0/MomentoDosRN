@@ -1,9 +1,8 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialIcons } from '@expo/vector-icons'
 import LoginScreen from './LoginScreen';
-import ProfileScreen from './ProfileScreen';
 import RegisterScreen from './RegisterScreen';
-import HomeScreen from './HomeScreen';
+import UserScreen from './UserScreen';
 
 const Tab = createBottomTabNavigator();
 export default function HomeTabs() {
@@ -16,19 +15,16 @@ export default function HomeTabs() {
         tabBarInactiveTintColor: 'black',
         tabBarActiveBackgroundColor: 'yellowgreen'
       }}>
-      <Tab.Screen name="Home" component={HomeScreen} options={{
+      <Tab.Screen name="User" component={UserScreen} options={{
         tabBarStyle: { display: 'none' },
         tabBarIcon: () => (<MaterialIcons name='home' size={30} />)
       }} />
-      <Tab.Screen name="Login" component={LoginScreen} options={{
+      <Tab.Screen name="Rent" component={LoginScreen} options={{
         tabBarStyle: { display: 'none' },
         tabBarIcon: () => (<MaterialIcons name='home' size={30} />)
       }} />
-      <Tab.Screen name="Register" component={RegisterScreen} options={{
+      <Tab.Screen name="Car" component={RegisterScreen} options={{
         tabBarIcon: () => (<MaterialIcons name='phone' size={30} />)
-      }} />
-      <Tab.Screen name="Profile" component={ProfileScreen} options={{
-        tabBarIcon: () => (<MaterialIcons name='person' size={30} />)
       }} />
     </Tab.Navigator>
   );
